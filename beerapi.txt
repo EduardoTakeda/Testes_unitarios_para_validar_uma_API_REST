@@ -1,0 +1,18 @@
+
+Com os testes unitários é possível montar um projeto bem documentado
+Frameworks: JUnit, Mockito e Hamcrest
+JPARepository classe que tem a responsabilidade de conversar com o
+ banco de dados, criação, leitura, atualização, exclusão e implementar 
+outras operações no bd, retorna os dados como um tipo Optional onde 
+são feitas operações seguras e posteriormente realizar validações 
+com o Optional
+O JPA faz todo o gerenciamento com o banco de dados (Spring data jpa)
+A classe sevice recebendo anotação @Service, para indicar que essa 
+classe será gerenciada pelo Spring, todo o ciclo de vida dela será
+gerenciada pelo Spring
+É só injetar a classe service na classe controller para que o String 
+faça o gerenciamento 
+
+Classe controller, onde acontece todas as operações inicial do padrão REST
+@RestController :indicando que é uma classe controladora e voltada a 
+uma API_REST e somente com a parte de dados
