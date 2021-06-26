@@ -40,7 +40,7 @@ Sobre TDD, criar primeiro testes que falham , para depois criar
 códigos que atendam os testes de formabem legível e de fácil manutenção
 exemplo: nos 3 testes sobre o incremento da classe BeerService, o increment
 sofreu alteração para cada teste aplicado para fins de aprimoramento do código
-
+Fazer um desenvolvimento de código orientado por teste
 
 
 
