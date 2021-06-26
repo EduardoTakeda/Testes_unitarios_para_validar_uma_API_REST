@@ -75,7 +75,7 @@ public class BeerControllerTest {
                 .andExpect(jsonPath("$.type", is(beerDTO.getType().toString())));
     }
 
-    @Test
+    @Test //retornando um erro
     void whenPOSTIsCalledWithoutRequiredFieldThenAnErrorIsReturned() throws Exception {
         // given
         BeerDTO beerDTO = BeerDTOBuilder.builder().build().toBeerDTO();
@@ -88,7 +88,7 @@ public class BeerControllerTest {
                 .andExpect(status().isBadRequest());
     }
 
-    @Test
+    @Test //validando quando o retorno tem sucesso (status 200), e validar alguns dados do corpo desse objeto
     void whenGETIsCalledWithValidNameThenOkStatusIsReturned() throws Exception {
         // given
         BeerDTO beerDTO = BeerDTOBuilder.builder().build().toBeerDTO();
@@ -105,7 +105,7 @@ public class BeerControllerTest {
                 .andExpect(jsonPath("$.type", is(beerDTO.getType().toString())));
     }
 
-    @Test
+    @Test //quando retorna status 404, quando não achar o nome
     void whenGETIsCalledWithoutRegisteredNameThenNotFoundStatusIsReturned() throws Exception {
         // given
         BeerDTO beerDTO = BeerDTOBuilder.builder().build().toBeerDTO();
@@ -119,7 +119,7 @@ public class BeerControllerTest {
                 .andExpect(status().isNotFound());
     }
 
-    @Test
+    @Test //
     void whenGETListWithBeersIsCalledThenOkStatusIsReturned() throws Exception {
         // given
         BeerDTO beerDTO = BeerDTOBuilder.builder().build().toBeerDTO();

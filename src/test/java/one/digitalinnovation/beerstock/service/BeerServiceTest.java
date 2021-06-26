@@ -91,7 +91,7 @@ public class BeerServiceTest {
         //vai verificar que a excessão foi lançada
     }
 
-    @Test
+    @Test //quando um nome de cerveja valida der entrada, retornar uma cerveja
     void whenValidBeerNameIsGivenThenReturnABeer() throws BeerNotFoundException {
         // given
         BeerDTO expectedFoundBeerDTO = BeerDTOBuilder.builder().build().toBeerDTO();
@@ -106,7 +106,7 @@ public class BeerServiceTest {
         assertThat(foundBeerDTO, is(equalTo(expectedFoundBeerDTO)));
     }
 
-    @Test
+    @Test //quando uma cerveja não registrada der entrada, lançar um Throw Exception
     void whenNotRegisteredBeerNameIsGivenThenThrowAnException() {
         // given
         BeerDTO expectedFoundBeerDTO = BeerDTOBuilder.builder().build().toBeerDTO();
@@ -118,7 +118,7 @@ public class BeerServiceTest {
         assertThrows(BeerNotFoundException.class, () -> beerService.findByName(expectedFoundBeerDTO.getName()));
     }
 
-    @Test
+    @Test //
     void whenListBeerIsCalledThenReturnAListOfBeers() {
         // given
         BeerDTO expectedFoundBeerDTO = BeerDTOBuilder.builder().build().toBeerDTO();
