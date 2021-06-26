@@ -31,3 +31,8 @@ Foi criado uma classa JsonConvertionUtils para realizar os testes
 no BeerControllerTest
 O JsonConvertionUtils converte todos os objetos para uma json para
 a simulação de uma chamada do teste unitario numa API
+
+Quando o teste não tem um retorno (um void), o assert não tem como
+ser aplicado, nesses casos se usa o verify do Mockito
+exemplo, no BeerServiceTest testando a exclusão
+

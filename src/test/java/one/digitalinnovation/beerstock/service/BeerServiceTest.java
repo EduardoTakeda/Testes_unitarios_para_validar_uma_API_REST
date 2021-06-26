@@ -118,7 +118,7 @@ public class BeerServiceTest {
         assertThrows(BeerNotFoundException.class, () -> beerService.findByName(expectedFoundBeerDTO.getName()));
     }
 
-    @Test //
+    @Test //quando retorna uma lista com dados
     void whenListBeerIsCalledThenReturnAListOfBeers() {
         // given
         BeerDTO expectedFoundBeerDTO = BeerDTOBuilder.builder().build().toBeerDTO();
@@ -134,7 +134,7 @@ public class BeerServiceTest {
         assertThat(foundListBeersDTO.get(0), is(equalTo(expectedFoundBeerDTO)));
     }
 
-    @Test
+    @Test //quando não há lista, ou lista vazia
     void whenListBeerIsCalledThenReturnAnEmptyListOfBeers() {
         //when
         when(beerRepository.findAll()).thenReturn(Collections.EMPTY_LIST);
@@ -145,7 +145,7 @@ public class BeerServiceTest {
         assertThat(foundListBeersDTO, is(empty()));
     }
 
-    @Test
+    @Test //quando exclusão for chamado, uma cerveja deve ser deletada
     void whenExclusionIsCalledWithValidIdThenABeerShouldBeDeleted() throws BeerNotFoundException{
         // given
         BeerDTO expectedDeletedBeerDTO = BeerDTOBuilder.builder().build().toBeerDTO();
@@ -158,6 +158,7 @@ public class BeerServiceTest {
         // then
         beerService.deleteById(expectedDeletedBeerDTO.getId());
 
+        //vereificação com o Mockito porque não tem retorno (void), não tem como verificar com o assert
         verify(beerRepository, times(1)).findById(expectedDeletedBeerDTO.getId());
         verify(beerRepository, times(1)).deleteById(expectedDeletedBeerDTO.getId());
     }

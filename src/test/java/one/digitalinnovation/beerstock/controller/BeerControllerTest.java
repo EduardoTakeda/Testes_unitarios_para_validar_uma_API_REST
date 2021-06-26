@@ -119,7 +119,7 @@ public class BeerControllerTest {
                 .andExpect(status().isNotFound());
     }
 
-    @Test //
+    @Test //quando uma lista é chamado, retornar OK
     void whenGETListWithBeersIsCalledThenOkStatusIsReturned() throws Exception {
         // given
         BeerDTO beerDTO = BeerDTOBuilder.builder().build().toBeerDTO();
@@ -150,7 +150,7 @@ public class BeerControllerTest {
                 .andExpect(status().isOk());
     }
 
-    @Test
+    @Test //quando delete é chamado no controller com id valido
     void whenDELETEIsCalledWithValidIdThenNoContentStatusIsReturned() throws Exception {
         // given
         BeerDTO beerDTO = BeerDTOBuilder.builder().build().toBeerDTO();
@@ -164,7 +164,7 @@ public class BeerControllerTest {
                 .andExpect(status().isNoContent());
     }
 
-    @Test
+    @Test //quando delete é chamado com id invalido
     void whenDELETEIsCalledWithInvalidIdThenNotFoundStatusIsReturned() throws Exception {
         //when
         doThrow(BeerNotFoundException.class).when(beerService).deleteById(INVALID_BEER_ID);
