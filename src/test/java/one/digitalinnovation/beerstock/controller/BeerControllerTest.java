@@ -175,7 +175,8 @@ public class BeerControllerTest {
                 .andExpect(status().isNotFound());
     }
 
-    @Test
+    @Test //quando o incremento é chamado
+    //será mockado a chamda do incremento
     void whenPATCHIsCalledToIncrementDiscountThenOKstatusIsReturned() throws Exception {
         QuantityDTO quantityDTO = QuantityDTO.builder()
                 .quantity(10)

@@ -36,3 +36,11 @@ Quando o teste não tem um retorno (um void), o assert não tem como
 ser aplicado, nesses casos se usa o verify do Mockito
 exemplo, no BeerServiceTest testando a exclusão
 
+Sobre TDD, criar primeiro testes que falham , para depois criar
+códigos que atendam os testes de formabem legível e de fácil manutenção
+exemplo: nos 3 testes sobre o incremento da classe BeerService, o increment
+sofreu alteração para cada teste aplicado para fins de aprimoramento do código
+
+
+
+
