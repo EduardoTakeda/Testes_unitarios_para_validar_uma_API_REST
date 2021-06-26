@@ -13,6 +13,21 @@ gerenciada pelo Spring
 É só injetar a classe service na classe controller para que o String 
 faça o gerenciamento 
 
-Classe controller, onde acontece todas as operações inicial do padrão REST
+OBS: na construção do "when", se faz uso do Mockito.when no início
+
+Classe controller, onde acontece todas as operações iniciais do padrão REST
 @RestController :indicando que é uma classe controladora e voltada a 
 uma API_REST e somente com a parte de dados
+
+A classe controller faz a a interação com o postman, nessa classe
+existe três métodos para ser testado
+
+A classe Sevice já testada, quando for testar o controller a service
+servirá como um mock, objeto dublê nos testes
+É preciso gerar um método de setup
+Antes de realizar cada teste, é preciso configurar o objeto mockMvc
+
+Foi criado uma classa JsonConvertionUtils para realizar os testes
+no BeerControllerTest
+O JsonConvertionUtils converte todos os objetos para uma json para
+a simulação de uma chamada do teste unitario numa API

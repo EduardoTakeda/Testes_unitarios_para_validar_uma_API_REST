@@ -45,7 +45,7 @@ public class BeerControllerTest {
     @Mock
     private BeerService beerService;
 
-    @InjectMocks
+    @InjectMocks   //essa anotação vai injetar um mock no BeerService
     private BeerController beerController;
 
     @BeforeEach
@@ -56,12 +56,13 @@ public class BeerControllerTest {
                 .build();
     }
 
-    @Test
+    @Test //chamada de criação de uma cerveja com sucesso
     void whenPOSTIsCalledThenABeerIsCreated() throws Exception {
         // given
         BeerDTO beerDTO = BeerDTOBuilder.builder().build().toBeerDTO();
 
-        // when
+        // when   -quando se usa when no teste, digitar Mockito.when
+        //quando "Add exception to method signature" o Mockito.when -> when(...
         when(beerService.createBeer(beerDTO)).thenReturn(beerDTO);
 
         // then
