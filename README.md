@@ -18,7 +18,7 @@ faça o gerenciamento
   
 
 * Classe controller, onde acontece todas as operações iniciais do padrão REST<br/>
-@RestController :indicando que é uma classe controladora e voltada a
+@RestController : indicando que é uma classe controladora e voltada a
 uma API_REST e somente com a parte de dados
   
 
