@@ -73,4 +73,13 @@ a necessidade de desenvolver um código mais completo, seguro e que
 atenda todas as necessidades do usuário prevendo e previnindo todas 
 as possibilidades possíveis.
 
+Finalizando o projeto:
+realizar fix a partir do teste quando incrementa valor acima do máximo...
+Corrigir o "mockMvc.perform(patch..." para "...(MockMvcRequestBuilders.patch..."
+para que o ".content(asJsonString(..." poder reconhecer a referência
+
+Criar o método "decrement" na classe BeerService
+
+Criar o "@PatchMapping("/{id}/decrement")" no BeerController, e fazer 
+a relação do "decrement"
 

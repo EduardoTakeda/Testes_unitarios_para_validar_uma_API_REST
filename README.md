@@ -87,3 +87,13 @@ Os testes que cobrem o maior cenário possível de situações vem atender
 a necessidade de desenvolver um código mais completo, seguro e que
 atenda todas as necessidades do usuário prevendo e previnindo todas
 as possibilidades possíveis.
+  
+
+* Finalizando o projeto:<br/>
+ *** realizar fix a partir do teste quando incrementa valor acima do máximo...<br/>
+ *** Corrigir o "mockMvc..." para que o ".content(asJsonString(..." possa reconhecer a referência<br/>
+ *** Criar o método "decrement" na classe BeerService<br/>
+ *** Criar o "@PatchMapping("/{id}/decrement")" no BeerController, e fazer
+a relação do "decrement"
+
+### Dessa forma, todos os testes unitários passarão!!!
