@@ -96,4 +96,3 @@ as possibilidades possíveis.
  *** Criar o "@PatchMapping("/{id}/decrement")" no BeerController, e fazer
 a relação do "decrement"
 
-## Dessa forma, todos os testes unitários passarão!!!
